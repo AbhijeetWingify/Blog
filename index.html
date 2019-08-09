@@ -16,9 +16,18 @@
   </script>
     
       <script type="text/javascript">
-        window._pcq.push(['triggerOptIn',{httpWindowOnly: true}]);
-        console.log("Inside the test");
-      </script>
+        window._pcq = window._pcq || [];
+        _pcq.push(['APIReady', callbackOnSuccessFunction,callbackOnFailureFunction]);
+
+          function callbackOnSuccessFunction() {
+             window._pcq.push(['triggerOptIn',{httpWindowOnly: true}]);
+}
+
+          function callbackOnFailureFunction(values) {
+          console.log(values.reasons) //It will give you the array of reasons why PushCrew API could not get ready .For eg:- ["PRIVATE_BROWSING", "BROWSER_NOT_SUPPORTED"] etc.
+}
+        
+     </script>
 
 </style>
     <title>Abhijeet's Blog</title>
