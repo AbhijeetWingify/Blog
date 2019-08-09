@@ -37,6 +37,7 @@
       function callbackOnAPIReady() {
     //now api is ready
     _pcq.push(['addSubscriberToSegment', 'homepage', callbackForAddToSegment]);
+    console.log("The subscriber get added to the segment on callbackOnAPIReady ")
 }
 
     function callbackForAddToSegment(response) {
